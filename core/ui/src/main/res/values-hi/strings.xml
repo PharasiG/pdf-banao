@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- All user-visible Hindi text. New strings get a "TODO review" comment until a native speaker checks them. -->
+<resources>
+    <!-- App name decided by the owner (PRD §10) -->
+    <string name="app_name">PDF बनाओ</string>
+</resources>

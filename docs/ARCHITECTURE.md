@@ -59,7 +59,7 @@
 
 ### SDK levels
 - `minSdk = 26` (Android 8.0)
-- `targetSdk = 36` and `compileSdk = 36` (or newer) — Google Play requires new apps and updates to target API 36 since 31 Aug 2026.
+- `targetSdk = 36` and `compileSdk = 36` (or newer) — Google Play requires new apps and updates to target API 36 since 31 Aug 2026. We use `compileSdk = 37` because the newest AndroidX libraries need it (see `docs/decisions/000-project-setup.md`).
 - Because we target 36: the app **must** draw edge-to-edge (use proper insets) and use the **predictive back** APIs (`BackHandler` / `OnBackPressedDispatcher`), not the old `onBackPressed()`.
 
 ---

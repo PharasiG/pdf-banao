@@ -38,7 +38,7 @@
 ## Part B — Tasks
 
 ### Milestone 0 — Foundation
-- [ ] **0.1 Create the project.** Multi-module Gradle project as in ARCHITECTURE §3 (`:app`, `:core:*`, `:feature:*`), version catalog, Kotlin, Compose, Material 3, Hilt, Navigation Compose. Package `io.github.<github-username>.pdfbanao` — ask the owner for their GitHub username first, then replace the placeholder in all docs too. minSdk 26, targetSdk/compileSdk 36. App shows an empty Home screen with the title "PDF Banao". Edge-to-edge on. Add a `.gitignore` for Android. Confirm `./gradlew assembleDebug` builds and the app runs on the emulator.
+- [x] **0.1 Create the project.** Multi-module Gradle project as in ARCHITECTURE §3 (`:app`, `:core:*`, `:feature:*`), version catalog, Kotlin, Compose, Material 3, Hilt, Navigation Compose. Package `io.github.zav.pdfbanao`. minSdk 26, targetSdk/compileSdk 36. App shows an empty Home screen with the title "PDF Banao". Edge-to-edge on. Add a `.gitignore` for Android. Confirm `./gradlew assembleDebug` builds and the app runs on the emulator.
 - [ ] **0.2 Code quality + CI.** Spotless/ktlint, Detekt, Android Lint. GitHub Actions workflow: build, unit tests, checks on every push and pull request. Add `README.md` and `LICENSE` (Apache 2.0).
 - [ ] **0.3 Theme + base components.** Light/dark theme, typography that scales well, `BigActionCard`, `ToolTile`, `ProgressScreen`, `ConfirmDialog`. `strings.xml` in English + Hindi with app name ("PDF Banao" / "PDF बनाओ"). Home screen layout from PRD §5 with placeholder buttons.
 - [ ] **0.4 PDF engine spike.** In `:core:pdf`, a quick test: make a 10-photo PDF with PdfBox-Android (JPEG embedded) and with Android `PdfDocument`. Compare file size and time. Record the result in `docs/decisions/001-pdf-engine.md`. (Expected: PdfBox gives much smaller files.)
@@ -92,7 +92,7 @@
 ### Milestone 6 — Release on Play Store
 - [ ] **6.1 Release build.** R8 + resource shrinking, PdfBox ProGuard rules, Baseline Profile, App Bundle. Test the **release** build fully. App download size < 10 MB.
 - [ ] **6.2 Privacy policy.** Simple page on GitHub Pages ("We collect nothing. Files stay on your phone."). Link it in Settings.
-- [ ] **6.3 Play Console setup.** Developer account, app created with package `io.github.<github-username>.pdfbanao`, Data safety = no data collected/shared, content rating, target audience (18+ / general).
+- [ ] **6.3 Play Console setup.** Developer account, app created with package `io.github.zav.pdfbanao`, Data safety = no data collected/shared, content rating, target audience (18+ / general).
 - [ ] **6.4 Store listing.** English + Hindi title, short and full description, 4–6 screenshots showing the 3-tap flow, feature graphic.
 - [ ] **6.5 Testing tracks.** Internal test → closed test. New personal developer accounts may have to run a closed test with a minimum number of testers for 14 days before going to production — check the current rule in Play Console and recruit testers early (friends/family in the target age group).
 - [ ] **6.6 Production launch.** Staged rollout (20% → 50% → 100%), watch Android vitals for crashes.

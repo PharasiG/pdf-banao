@@ -14,7 +14,7 @@ Before working on anything, read:
 
 ## Key facts
 - App name: **PDF Banao** (English) / **PDF बनाओ** (Hindi)
-- Package: `io.github.<github-username>.pdfbanao` (if `<github-username>` is still a placeholder anywhere, ask the owner for their GitHub username; use lowercase and replace `-` with `_`). This ID can never change after the first Play upload. · minSdk 26 · targetSdk 36 · Kotlin · Jetpack Compose · Material 3 · Hilt · Room · Coroutines
+- Package: `io.github.zav.pdfbanao` (owner's GitHub username: `Zav`). This ID can never change after the first Play upload. · minSdk 26 · targetSdk 36 · compileSdk 37 (see `docs/decisions/000-project-setup.md`) · Kotlin · Jetpack Compose · Material 3 · Hilt · Room · Coroutines
 - PDF writing/editing: **PdfBox-Android**. PDF rendering: Android **PdfRenderer**. Scanning: **ML Kit Document Scanner**.
 - License: Apache 2.0. Distribution: Google Play only.
 

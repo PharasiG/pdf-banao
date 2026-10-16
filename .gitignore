@@ -1,0 +1,37 @@
+# Gradle and Kotlin build files
+.gradle/
+.kotlin/
+build/
+
+# This computer only (SDK path) — never commit
+local.properties
+
+# Signing keys and passwords — never commit
+*.jks
+*.keystore
+keystore.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+.navigation/
+.externalNativeBuild/
+.cxx/
+
+# Build outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Claude Code personal settings
+.claude/settings.local.json
+
+# Logs and memory dumps
+*.log
+*.hprof
+
+# OS files
+.DS_Store
+Thumbs.db

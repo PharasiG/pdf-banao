@@ -278,6 +278,6 @@ Rules:
 
 ## 10. Open questions
 - ~~App name~~ — **decided: PDF Banao** (Hindi label: "PDF बनाओ").
-- ~~Package ID~~ — **decided: `io.github.<github-username>.pdfbanao`** (unique because GitHub usernames are unique; permanent after first Play upload). The real username is filled in during task 0.1.
+- ~~Package ID~~ — **decided: `io.github.zav.pdfbanao`** (unique because GitHub usernames are unique; permanent after first Play upload).
 - Who will review Hindi translations?
 - Which languages come next after Hindi (decide using Play Console country/language data)?
