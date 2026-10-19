@@ -21,9 +21,11 @@ naming:
 style:
   MagicNumber:
     # Sizes in screen code (16.dp, 0.5f) and preview settings are fine as plain numbers.
+    # PreviewLightDarkHindiBigFont is our own @Preview (light, dark, Hindi, 200% font) in :core:ui.
     ignoreAnnotated:
       - Composable
       - Preview
+      - PreviewLightDarkHindiBigFont
   MaxLineLength:
     # ktlint already checks this (100 characters).
     active: false
@@ -31,3 +33,4 @@ style:
     # Preview functions are only used by Android Studio, so they look unused.
     ignoreAnnotated:
       - Preview
+      - PreviewLightDarkHindiBigFont

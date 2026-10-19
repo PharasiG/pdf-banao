@@ -2,15 +2,14 @@ package io.github.zav.pdfbanao.core.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
-// Default Material 3 colours for now. Task 0.3 gives the app its own colours and type.
-private val LightColors = lightColorScheme()
-private val DarkColors = darkColorScheme()
-
-/** The app's theme. Wrap every screen in this. */
+/**
+ * The app's theme. Wrap every screen in this.
+ *
+ * Always uses the app's own colours, never the phone's wallpaper colours ("Material You"),
+ * so the app looks the same on every phone. Light or dark follows the phone's setting.
+ */
 @Composable
 fun PdfBanaoTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -18,6 +17,8 @@ fun PdfBanaoTheme(
 ) {
     MaterialTheme(
         colorScheme = if (darkTheme) DarkColors else LightColors,
+        typography = PdfBanaoTypography,
+        shapes = PdfBanaoShapes,
         content = content,
     )
 }

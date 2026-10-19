@@ -6,26 +6,56 @@ import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
 /**
  * Everything the Home screen shows.
- * Task 0.3 adds the big buttons and task 3.1 adds "Recent PDFs".
+ * Task 3.1 adds the list of recent PDFs.
  */
 data class HomeUiState(
-    val isLoading: Boolean = false,
+    /** True while the "Coming soon" note is on screen. */
+    val showComingSoon: Boolean = false,
 )
 
-/** Everything the user can do on the Home screen. None yet: task 0.3 adds the buttons. */
-sealed interface HomeEvent
+/** Every button on the Home screen. */
+enum class HomeButton {
+    PhotosToPdf,
+    Scan,
+    MyPdfs,
+    IdCard,
+    MakeSmaller,
+    Join,
+    TakeOutPages,
+    ArrangePages,
+    PdfToPhotos,
+    Lock,
+    Unlock,
+    Settings,
+}
+
+/** Everything the user can do on the Home screen. */
+sealed interface HomeEvent {
+    /** The user tapped one of the buttons. */
+    data class ButtonClick(
+        val button: HomeButton,
+    ) : HomeEvent
+
+    /** The "Coming soon" note was shown and has gone away. */
+    data object ComingSoonShown : HomeEvent
+}
 
 @HiltViewModel
 class HomeViewModel @Inject constructor() : ViewModel() {
     private val _state = MutableStateFlow(HomeUiState())
     val state: StateFlow<HomeUiState> = _state.asStateFlow()
 
-    // Remove this @Suppress when task 0.3 adds the first events.
-    @Suppress("UnusedParameter")
     fun onEvent(event: HomeEvent) {
-        // Nothing to handle yet. Task 0.3 adds the first events.
+        when (event) {
+            // No button has its screen yet, so every button says "Coming soon".
+            // As each screen is built (see docs/ROADMAP.md), its button opens that screen instead.
+            is HomeEvent.ButtonClick -> _state.update { it.copy(showComingSoon = true) }
+
+            HomeEvent.ComingSoonShown -> _state.update { it.copy(showComingSoon = false) }
+        }
     }
 }

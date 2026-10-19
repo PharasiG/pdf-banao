@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- All user-visible English text. Hindi is in values-hi/strings.xml. -->
+<!-- All user-visible English text. Hindi is in values-hi/strings.xml. Use the simple words from PRD §7. -->
 <resources>
     <string name="app_name">PDF Banao</string>
+
+    <!-- Shared -->
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="settings">Settings</string>
+    <!-- Shown when the user taps a button whose screen isn't built yet -->
+    <string name="coming_soon">Coming soon. This part of the app isn\'t ready yet.</string>
+
+    <!-- Progress screen. %1$d = the page being worked on, %2$d = all pages. Example: "Page 7 of 30" -->
+    <string name="progress_page_of">Page %1$d of %2$d</string>
+    <string name="making_pdf">Making your PDF…</string>
+
+    <!-- Asking before deleting a PDF -->
+    <string name="delete_pdf_title">Delete this PDF?</string>
+    <string name="delete_pdf_message">It will be deleted from your phone. You can\'t get it back.</string>
+
+    <!-- Home screen -->
+    <string name="home_photos_to_pdf">Photos to PDF</string>
+    <string name="home_photos_to_pdf_hint">Pick photos from your phone</string>
+    <string name="home_scan">Scan with camera</string>
+    <string name="home_scan_hint">Take photos of paper</string>
+    <string name="home_my_pdfs">My PDFs</string>
+    <string name="home_my_pdfs_hint">See the PDFs you made</string>
+    <string name="home_recent_pdfs">Recent PDFs</string>
+    <string name="home_no_pdfs_yet">No PDFs yet. Tap “Photos to PDF” to make your first one.</string>
+    <string name="home_tools">Tools</string>
+
+    <!-- Tool names, used on Home and later on the Tools screen -->
+    <string name="tool_id_card">ID card</string>
+    <string name="tool_make_smaller">Make PDF smaller</string>
+    <string name="tool_join">Join PDFs</string>
+    <string name="tool_take_out_pages">Take out pages</string>
+    <string name="tool_arrange_pages">Arrange PDF pages</string>
+    <string name="tool_pdf_to_photos">PDF to photos</string>
+    <string name="tool_lock">Lock with password</string>
+    <string name="tool_unlock">Remove password</string>
 </resources>

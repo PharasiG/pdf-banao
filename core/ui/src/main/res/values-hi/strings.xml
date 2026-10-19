@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- All user-visible Hindi text. New strings get a "TODO review" comment until a native speaker checks them. -->
+<!--
+    Note for the reviewer: PRD §7 says "PDF छोटा करें", which treats PDF as masculine.
+    Other strings here treat it as feminine ("मेरी PDF", "PDF बन रही है"). Please pick one and make them match.
+-->
 <resources>
     <!-- App name decided by the owner (PRD §10) -->
     <string name="app_name">PDF बनाओ</string>
+
+    <!-- Shared -->
+    <!-- TODO review -->
+    <string name="cancel">रद्द करें</string>
+    <!-- TODO review -->
+    <string name="delete">हटाएँ</string>
+    <!-- TODO review -->
+    <string name="settings">सेटिंग</string>
+    <!-- TODO review -->
+    <string name="coming_soon">जल्द आ रहा है। ऐप का यह हिस्सा अभी तैयार नहीं है।</string>
+
+    <!-- Progress screen. %1$d = the page being worked on, %2$d = all pages. -->
+    <!-- TODO review -->
+    <string name="progress_page_of">%2$d में से पेज %1$d</string>
+    <!-- TODO review -->
+    <string name="making_pdf">आपकी PDF बन रही है…</string>
+
+    <!-- Asking before deleting a PDF -->
+    <!-- TODO review -->
+    <string name="delete_pdf_title">यह PDF हटाएँ?</string>
+    <!-- TODO review -->
+    <string name="delete_pdf_message">यह आपके फ़ोन से हट जाएगी। इसे वापस नहीं ला सकते।</string>
+
+    <!-- Home screen -->
+    <!-- TODO review (from PRD §7) -->
+    <string name="home_photos_to_pdf">फ़ोटो से PDF</string>
+    <!-- TODO review -->
+    <string name="home_photos_to_pdf_hint">फ़ोन से फ़ोटो चुनें</string>
+    <!-- TODO review (from PRD §7) -->
+    <string name="home_scan">कैमरे से स्कैन करें</string>
+    <!-- TODO review -->
+    <string name="home_scan_hint">कागज़ की फ़ोटो लें</string>
+    <!-- TODO review -->
+    <string name="home_my_pdfs">मेरी PDF</string>
+    <!-- TODO review -->
+    <string name="home_my_pdfs_hint">अपनी बनाई PDF देखें</string>
+    <!-- TODO review -->
+    <string name="home_recent_pdfs">हाल की PDF</string>
+    <!-- TODO review -->
+    <string name="home_no_pdfs_yet">अभी कोई PDF नहीं है। अपनी पहली PDF बनाने के लिए “फ़ोटो से PDF” दबाएँ।</string>
+    <!-- TODO review -->
+    <string name="home_tools">टूल</string>
+
+    <!-- Tool names, used on Home and later on the Tools screen -->
+    <!-- TODO review -->
+    <string name="tool_id_card">ID कार्ड</string>
+    <!-- TODO review (from PRD §7) -->
+    <string name="tool_make_smaller">PDF छोटा करें</string>
+    <!-- TODO review (from PRD §7) -->
+    <string name="tool_join">PDF जोड़ें</string>
+    <!-- TODO review (from PRD §7) -->
+    <string name="tool_take_out_pages">पेज अलग करें</string>
+    <!-- TODO review -->
+    <string name="tool_arrange_pages">PDF के पेज ठीक करें</string>
+    <!-- TODO review -->
+    <string name="tool_pdf_to_photos">PDF से फ़ोटो</string>
+    <!-- TODO review (from PRD §7) -->
+    <string name="tool_lock">पासवर्ड से लॉक करें</string>
+    <!-- TODO review (from PRD §7) -->
+    <string name="tool_unlock">पासवर्ड हटाएँ</string>
 </resources>
