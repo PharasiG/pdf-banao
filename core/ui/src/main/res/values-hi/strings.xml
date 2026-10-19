@@ -10,6 +10,8 @@
 
     <!-- Shared -->
     <!-- TODO review -->
+    <string name="back">वापस</string>
+    <!-- TODO review -->
     <string name="cancel">रद्द करें</string>
     <!-- TODO review -->
     <string name="delete">हटाएँ</string>
@@ -49,6 +51,23 @@
     <string name="home_no_pdfs_yet">अभी कोई PDF नहीं है। अपनी पहली PDF बनाने के लिए “फ़ोटो से PDF” दबाएँ।</string>
     <!-- TODO review -->
     <string name="home_tools">टूल</string>
+
+    <!-- Selected photos screen -->
+    <!-- Screen title. %d = how many photos. -->
+    <!-- TODO review -->
+    <plurals name="selected_photos_title">
+        <item quantity="one">%d फ़ोटो चुनी गई</item>
+        <item quantity="other">%d फ़ोटो चुनी गईं</item>
+    </plurals>
+    <!-- %1$d = the page number -->
+    <!-- TODO review -->
+    <string name="page_number">पेज %1$d</string>
+    <!-- %1$d = the limit (always 100) -->
+    <!-- TODO review -->
+    <plurals name="selected_photos_left_out">
+        <item quantity="one">आप ज़्यादा से ज़्यादा %1$d फ़ोटो चुन सकते हैं। सिर्फ़ पहली फ़ोटो जोड़ी गई।</item>
+        <item quantity="other">आप ज़्यादा से ज़्यादा %1$d फ़ोटो चुन सकते हैं। सिर्फ़ पहली %1$d फ़ोटो जोड़ी गईं।</item>
+    </plurals>
 
     <!-- Tool names, used on Home and later on the Tools screen -->
     <!-- TODO review -->

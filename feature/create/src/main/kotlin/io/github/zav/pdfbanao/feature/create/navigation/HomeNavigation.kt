@@ -9,9 +9,13 @@ import kotlinx.serialization.Serializable
 @Serializable
 data object HomeDestination
 
-/** Adds the Home screen to the app's navigation map. */
-fun NavGraphBuilder.homeScreen() {
+/**
+ * Adds the Home screen to the app's navigation map.
+ *
+ * @param onPhotosPick called with the photos the user picked after tapping "Photos to PDF".
+ */
+fun NavGraphBuilder.homeScreen(onPhotosPick: (photoUris: List<String>) -> Unit) {
     composable<HomeDestination> {
-        HomeRoute()
+        HomeRoute(onPhotosPick = onPhotosPick)
     }
 }

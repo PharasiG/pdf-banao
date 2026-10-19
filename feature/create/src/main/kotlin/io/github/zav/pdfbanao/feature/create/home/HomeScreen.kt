@@ -1,5 +1,9 @@
 package io.github.zav.pdfbanao.feature.create.home
 
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
@@ -49,14 +53,42 @@ import io.github.zav.pdfbanao.core.ui.component.BigActionCard
 import io.github.zav.pdfbanao.core.ui.component.ToolTile
 import io.github.zav.pdfbanao.core.ui.preview.PreviewLightDarkHindiBigFont
 import io.github.zav.pdfbanao.core.ui.theme.PdfBanaoTheme
+import io.github.zav.pdfbanao.feature.create.photos.MAX_PHOTOS
 
-/** Connects [HomeScreen] to its [HomeViewModel]. */
+/**
+ * Connects [HomeScreen] to its [HomeViewModel], and opens the Android photo picker when the
+ * ViewModel asks for it.
+ *
+ * @param onPhotosPick called with the picked photos' addresses (content URIs), in the order the
+ *   user picked them. Not called if the user closes the picker without picking anything.
+ */
 @Composable
 fun HomeRoute(
+    onPhotosPick: (photoUris: List<String>) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+
+    // The photo picker needs no storage permission: the app only gets the photos the user picks.
+    val photoPicker = rememberLauncherForActivityResult(
+        ActivityResultContracts.PickMultipleVisualMedia(maxItems = MAX_PHOTOS),
+    ) { uris ->
+        if (uris.isNotEmpty()) onPhotosPick(uris.map(Uri::toString))
+    }
+    LaunchedEffect(state.openPhotoPicker) {
+        if (state.openPhotoPicker) {
+            photoPicker.launch(
+                PickVisualMediaRequest(
+                    mediaType = ActivityResultContracts.PickVisualMedia.ImageOnly,
+                    // Newer pickers number the photos as the user taps them (PRD F1: tap order).
+                    isOrderedSelection = true,
+                ),
+            )
+            viewModel.onEvent(HomeEvent.PhotoPickerOpened)
+        }
+    }
+
     HomeScreen(
         state = state,
         onEvent = viewModel::onEvent,

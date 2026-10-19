@@ -46,7 +46,7 @@
 **Milestone check:** app opens, looks right in light/dark, CI is green.
 
 ### Milestone 1 — Core flow, end to end (can be plain-looking)
-- [ ] **1.1 Pick photos.** "Photos to PDF" opens the Photo Picker (multi-select, up to 100). Selected photos show as a simple list.
+- [x] **1.1 Pick photos.** "Photos to PDF" opens the Photo Picker (multi-select, up to 100). Selected photos show as a simple list.
 - [ ] **1.2 Image processing.** `:core:image` `ImageProcessor`: decode at reduced size, fix EXIF rotation, encode JPEG at given quality. Unit/instrumented tests with sample photos.
 - [ ] **1.3 Make the PDF.** `PdfCreator.createFromImages` with default options (A4, small margin, medium quality), one page at a time, progress callback. `JobRunner` with cancel. Progress screen.
 - [ ] **1.4 Name and save.** Name dialog (default name, text pre-selected, bad characters removed, `(1)` for duplicates). Save to `Documents/PDF Banao` via MediaStore (and legacy path for Android 8–9). Room `documents` table + `DocumentRepository`.

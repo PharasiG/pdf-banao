@@ -4,6 +4,7 @@
     <string name="app_name">PDF Banao</string>
 
     <!-- Shared -->
+    <string name="back">Back</string>
     <string name="cancel">Cancel</string>
     <string name="delete">Delete</string>
     <string name="settings">Settings</string>
@@ -28,6 +29,20 @@
     <string name="home_recent_pdfs">Recent PDFs</string>
     <string name="home_no_pdfs_yet">No PDFs yet. Tap “Photos to PDF” to make your first one.</string>
     <string name="home_tools">Tools</string>
+
+    <!-- Selected photos screen: the photos the user picked, one row per future PDF page -->
+    <!-- Screen title. %d = how many photos. Example: "12 photos selected" -->
+    <plurals name="selected_photos_title">
+        <item quantity="one">%d photo selected</item>
+        <item quantity="other">%d photos selected</item>
+    </plurals>
+    <!-- One row of the list. %1$d = the page number. Example: "Page 3" -->
+    <string name="page_number">Page %1$d</string>
+    <!-- Shown when more photos came in than the app takes. %1$d = the limit (always 100). -->
+    <plurals name="selected_photos_left_out">
+        <item quantity="one">You can pick up to %1$d photo. Only the first one was added.</item>
+        <item quantity="other">You can pick up to %1$d photos. Only the first %1$d were added.</item>
+    </plurals>
 
     <!-- Tool names, used on Home and later on the Tools screen -->
     <string name="tool_id_card">ID card</string>
