@@ -1,5 +1,6 @@
 import com.android.build.api.dsl.LibraryExtension
 import io.github.zav.pdfbanao.buildlogic.PdfBanaoSdk
+import io.github.zav.pdfbanao.buildlogic.configureAndroidLint
 import io.github.zav.pdfbanao.buildlogic.configureKotlinAndroid
 import io.github.zav.pdfbanao.buildlogic.libs
 import org.gradle.api.Plugin
@@ -15,6 +16,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
+                configureAndroidLint(this)
                 testOptions.targetSdk = PdfBanaoSdk.TARGET
                 lint.targetSdk = PdfBanaoSdk.TARGET
             }

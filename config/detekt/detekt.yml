@@ -1,0 +1,33 @@
+# Our changes to Detekt's default rules. Everything not listed here uses the default.
+# Full list of rules: https://detekt.dev/docs/rules/complexity
+
+complexity:
+  LongParameterList:
+    # Compose screens often take many small parameters (state, callbacks, modifier).
+    ignoreAnnotated:
+      - Composable
+
+naming:
+  FunctionNaming:
+    # Compose screens are functions whose names start with a capital letter, like HomeScreen().
+    ignoreAnnotated:
+      - Composable
+  MatchingDeclarationName:
+    # A navigation file holds a screen's address plus its helper functions, and is named after
+    # the screen: HomeNavigation.kt holds HomeDestination and homeScreen().
+    excludes:
+      - '**/navigation/**'
+
+style:
+  MagicNumber:
+    # Sizes in screen code (16.dp, 0.5f) and preview settings are fine as plain numbers.
+    ignoreAnnotated:
+      - Composable
+      - Preview
+  MaxLineLength:
+    # ktlint already checks this (100 characters).
+    active: false
+  UnusedPrivateFunction:
+    # Preview functions are only used by Android Studio, so they look unused.
+    ignoreAnnotated:
+      - Preview

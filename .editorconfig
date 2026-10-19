@@ -1,0 +1,24 @@
+# Basic editor settings for the whole project. Android Studio reads this file.
+# ktlint's style settings are in build.gradle.kts (see `ktlintStyle` there).
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{kt,kts}]
+max_line_length = 100
+# For Android Studio's "Reformat Code". Keep these the same as `ktlintStyle` in build.gradle.kts.
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = true
+ij_kotlin_imports_layout = *
+
+[*.{yml,yaml}]
+indent_size = 2
+
+[*.bat]
+end_of_line = crlf

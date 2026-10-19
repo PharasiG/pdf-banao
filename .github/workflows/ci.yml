@@ -1,0 +1,51 @@
+# Checks every push and pull request: formatting, code checks, Android Lint, unit tests and a debug build.
+# The same command works on your computer: see "Checks" in README.md.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+# A newer push to the same branch stops the older run that is still going.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# This workflow only reads the code.
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Build and check
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v7
+
+      - name: Set up Java 25 (same as Android Studio)
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 25
+
+      # Also checks that gradle/wrapper/gradle-wrapper.jar is the real one from Gradle.
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          # Open-source cache, free for private repositories too. See docs/decisions/002-code-quality-and-ci.md.
+          cache-provider: basic
+
+      - name: Check formatting, code, Lint, unit tests and build
+        run: ./gradlew spotlessCheck detekt lintDebug testDebugUnitTest assembleDebug
+
+      - name: Save the reports if something failed
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports
+          path: |
+            **/build/reports/
+            **/build/test-results/
+          retention-days: 14

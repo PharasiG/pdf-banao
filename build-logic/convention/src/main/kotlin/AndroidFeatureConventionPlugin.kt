@@ -24,13 +24,17 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 "implementation"(project(":core:model"))
                 "implementation"(project(":core:ui"))
 
-                "implementation"(libs.findLibrary("androidx-hilt-lifecycle-viewmodel-compose").get())
+                "implementation"(
+                    libs.findLibrary("androidx-hilt-lifecycle-viewmodel-compose").get(),
+                )
                 "implementation"(libs.findLibrary("androidx-lifecycle-runtime-compose").get())
                 "implementation"(libs.findLibrary("androidx-lifecycle-viewmodel-compose").get())
                 "implementation"(libs.findLibrary("androidx-navigation-compose").get())
                 "implementation"(libs.findLibrary("kotlinx-serialization-core").get())
 
-                "androidTestImplementation"(libs.findLibrary("androidx-compose-ui-test-junit4").get())
+                "androidTestImplementation"(
+                    libs.findLibrary("androidx-compose-ui-test-junit4").get(),
+                )
                 "androidTestImplementation"(libs.findLibrary("androidx-test-ext-junit").get())
                 "androidTestImplementation"(libs.findLibrary("androidx-test-runner").get())
                 "debugImplementation"(libs.findLibrary("androidx-compose-ui-test-manifest").get())

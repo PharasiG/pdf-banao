@@ -28,6 +28,6 @@ Why: This is how AGP 9 expects Kotlin to be set up, and it keeps one Kotlin vers
 
 ## Other small choices
 - `android:allowBackup="false"` + `data_extraction_rules.xml`: Android won't copy the app's data (like the My PDFs list) to Google Drive backups. Fits "files never leave your phone". Moving data phone-to-phone is still allowed.
-- Gradle wrapper is 9.6.0 (what AGP 9.4.1 recommends), not the newest 9.8.1: on the owner's connection, downloads from GitHub's file servers (where Gradle is hosted) ran at about 5 KB/s, while 9.6.0 was already on the computer. Update it later with `./gradlew wrapper --gradle-version <newest>` when the download works. Lint shows a reminder warning until then.
+- Gradle wrapper is 9.6.0 (what AGP 9.4.1 recommends), not the newest 9.8.1: on the owner's connection, downloads from GitHub's file servers (where Gradle is hosted) ran at about 5 KB/s, while 9.6.0 was already on the computer. Update it later with `./gradlew wrapper --gradle-version <newest>` when the download works. Lint showed a reminder warning until task 0.2 turned that check off (see 002).
 - `:core:model` is an Android library, not plain Kotlin, so it can use Android types like `Uri` later.
 - `HomeUiState` has a placeholder `isLoading` field because a Kotlin data class needs at least one field. Task 0.3/3.1 replaces it with real content.

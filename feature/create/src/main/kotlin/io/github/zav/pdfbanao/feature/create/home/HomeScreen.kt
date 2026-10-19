@@ -32,6 +32,8 @@ fun HomeRoute(
 }
 
 /** Draws the Home screen. No logic here: it only shows [state] and sends [HomeEvent]s. */
+// Remove this @Suppress when task 0.3 draws the buttons from state and onEvent.
+@Suppress("UnusedParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
